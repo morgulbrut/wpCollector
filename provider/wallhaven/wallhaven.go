@@ -9,10 +9,6 @@ import (
 	"github.com/morgulbrut/soup"
 )
 
-//
-//
-//
-
 //Get all the wallpapers from wallhaven
 func Get(query string, size string, numPages int) {
 
