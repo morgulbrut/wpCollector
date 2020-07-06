@@ -13,7 +13,8 @@ import (
 func Get(query string, size string, numPages int) {
 
 	for i := 1; i <= numPages; i++ {
-		url := fmt.Sprintf("https://wallhaven.cc/search?q=%s&purity=110&resolutions=%s", query, size)
+		url := fmt.Sprintf("https://wallhaven.cc/search?q=%s&categories=101&purity=110&resolutions=%s&sorting=relevance&order=desc", query, size)
+		colorlog.Debug("URL: %s", url)
 		resp, _ := soup.Get(url)
 		doc := soup.HTMLParse(resp)
 		pics := doc.FindAll("a", "class", "preview")
